@@ -4,5 +4,18 @@
 </head>
 <body>
     <div>Hello!</div>
+    <div>
+        <form action="{% url microblog:save %}" method="post">{% csrf_token %}
+            {{ form }}
+            <input type="submit" />
+        </form>
+    </div>
+    <div>
+        <ul>
+            {% for message in messages %}
+            <li>{{ message.message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
