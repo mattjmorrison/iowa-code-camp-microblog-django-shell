@@ -77,7 +77,15 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-    os.path.dirname(__file__),
+    os.path.abspath(os.path.dirname(__file__)),
+    os.path.abspath(os.path.join(os.path.dirname(__file__),
+                                 '..',
+                                 'eggs',
+                                 'Django-1.2.3-py2.7.egg',
+                                 'django',
+                                 'contrib',
+                                 'admin',
+                                 'templates'))
 )
 
 INSTALLED_APPS = (
