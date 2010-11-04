@@ -1,8 +1,13 @@
 # Django settings for microblog project.
 import os
+import unittest
+
+unittest.TestLoader.testMethodPrefix = 'should_'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+SOUTH_TESTS_MIGRATE = False
+
 
 ADMINS = (
     ('Your Name', 'your_email@domain.com'),
