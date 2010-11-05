@@ -8,6 +8,7 @@ setup(
     package_dir={'': 'src'},
     install_requires = (
         'django==1.2.3',
+		'django-debug-toolbar',
         'south',
         'mock'),
     entry_points=("""

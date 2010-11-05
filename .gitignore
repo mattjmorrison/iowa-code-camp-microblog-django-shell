@@ -4,6 +4,7 @@
 *.pyo
 bin
 develop-eggs
+eggs
 parts
 *.egg-info*
 .database

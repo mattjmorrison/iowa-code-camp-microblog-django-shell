@@ -77,6 +77,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+	'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -90,10 +91,17 @@ TEMPLATE_DIRS = (
                                  'django',
                                  'contrib',
                                  'admin',
-                                 'templates'))
+                                 'templates')),
+	os.path.abspath(os.path.join(os.path.dirname(__file__),
+								 '..',
+								 'eggs',
+								 'django_debug_toolbar-0.8.3-py2.7.egg',
+								 'debug_toolbar',
+								 'templates')),
 )
 
 INSTALLED_APPS = (
+	'debug_toolbar',
     'south',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -103,3 +111,5 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'microblog',
 )
+
+INTERNAL_IPS = ('127.0.0.1',)
